@@ -32,12 +32,12 @@ HOME_PHOTOS = [
     },
     {
         "src": "assets/images/potts_defense.jpg",
-        "alt": "Mathew Potts at his Ph.D. defense",
+        "alt": "Madeline Potts at her Ph.D. defense",
         "caption": "Ph.D. defense on April 15, 2022.",
     },
     {
         "src": "assets/images/MD_Mirrors.jpg",
-        "alt": "Mathew standing in front of Middle Drum mirrors",
+        "alt": "Madeline standing in front of Middle Drum mirrors",
         "caption": "Middle Drum fluorescence detector mirrors.",
     },
     {
@@ -59,7 +59,7 @@ HOME_PHOTOS = [
 
 ABOUT_ME_PARAGRAPHS = [
     '''
-My name is Mathew Potts, and I am an experimental physicist and computational researcher with a Ph.D. in Physics from the University of Utah. My background combines particle and astroparticle physics, scientific computing, Monte Carlo simulation, detector development, data analysis, high-performance computing, and software development. My doctoral research focused on ultra-high-energy cosmic rays with the Telescope Array (TA) observatory. In particular, I developed a measurement of the cosmic-ray energy spectrum using TAx4, the observatory's expanded detector array. My work used hybrid events observed by both surface detectors and fluorescence telescopes, combining complementary measurements of extensive air showers to reconstruct the properties of the primary cosmic rays. This research involved large-scale data analysis, detector characterization, Monte Carlo simulation, statistical analysis, and comparison of experimental data with simulated events.
+My name is Madeline Potts, and I am an experimental physicist and computational researcher with a Ph.D. in Physics from the University of Utah. My background combines particle and astroparticle physics, scientific computing, Monte Carlo simulation, detector development, data analysis, high-performance computing, and software development. My doctoral research focused on ultra-high-energy cosmic rays with the Telescope Array (TA) observatory. In particular, I developed a measurement of the cosmic-ray energy spectrum using TAx4, the observatory's expanded detector array. My work used hybrid events observed by both surface detectors and fluorescence telescopes, combining complementary measurements of extensive air showers to reconstruct the properties of the primary cosmic rays. This research involved large-scale data analysis, detector characterization, Monte Carlo simulation, statistical analysis, and comparison of experimental data with simulated events.
 
     ''',
     '''
@@ -263,12 +263,12 @@ PHOTOS = [
     },
     {
         "src": "../assets/images/potts_defense.jpg",
-        "alt": "Mathew Potts at his Ph.D. defense",
+        "alt": "Madeline Potts at her Ph.D. defense",
         "caption": "Ph.D. defense, April 15, 2022.",
     },
     {
         "src": "../assets/images/MD_Mirrors.jpg",
-        "alt": "Mathew Potts standing in front of Middle Drum mirrors",
+        "alt": "Madeline Potts standing in front of Middle Drum mirrors",
         "caption": "Middle Drum fluorescence detector mirrors.",
     },
     {
