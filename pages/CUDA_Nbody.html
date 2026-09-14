@@ -27,11 +27,64 @@
     <main><div class="container"><div class="row" id="row-tile-overlay-last">
         <div class="overlay-header"><h1>CUDA N-body Simulation of Gravitational Systems</h1></div>
         <div class="info-box" id="info-pro">
-            <h2>Project Overview</h2>
+            <div class="portrait" id="toc">
+                <p class="toc_title">Table of Contents:</p>
+                <ol>
+                    <li><a href="#cuda-overview">Project Overview</a></li>
+                    <li><a href="#cuda-process">How the Simulation Works</a></li>
+                    <li><a href="#cuda-leapfrog">Why Leapfrog Integration</a></li>
+                    <li><a href="#cuda-features">Features</a></li>
+                    <li><a href="#cuda-current">Current Simulation</a></li>
+                    <li><a href="#cuda-display">From Physics to Display</a></li>
+                    <li><a href="#cuda-decisions">Engineering Decisions</a></li>
+                    <li><a href="#cuda-lessons">What This Project Explores</a></li>
+                    <li><a href="#cuda-requirements">Build Requirements</a></li>
+                    <li><a href="#cuda-controls">Controls</a></li>
+                    <li><a href="#cuda-next">Future Directions</a></li>
+                </ol>
+            </div>
+            <h2 id="cuda-overview">Project Overview</h2>
             <p><strong style="color:#fff">Fall, 2026 - Present</strong></p>
-            <p>A personal project to learn CUDA programming by simulating and displaying gravitational systems.</p>
-            <h2>Project Details</h2>
-            <p>Details, visualizations, and project results will be added here.</p>
+            <p>A GPU-accelerated N-body gravity simulation implemented in CUDA, C++, and OpenGL. The project explores parallel force calculations, numerical integration, interactive visualization, and CUDA performance optimization.</p>
+            <p><a href="https://github.com/mathewpotts/cuda-nbody" target="_blank">View the project on GitHub</a></p>
+            <h2 id="cuda-process">How the Simulation Works</h2>
+            <p>Each simulated body stores a position, velocity, and mass. At every timestep, the program calculates the gravitational acceleration on each body by adding the influence of every other body. This direct approach is intentionally simple and transparent: it has O(N<sup>2</sup>) cost, but it makes the physics and the effect of each optimization easy to inspect.</p>
+            <p>The force calculation is distributed across the GPU by assigning one CUDA thread to each target body. The threads process source bodies in shared-memory tiles, allowing all threads in a block to reuse the same source data instead of repeatedly fetching it from slower global memory. This reduces memory traffic while preserving the same physical calculation.</p>
+            <h2 id="cuda-leapfrog">Why Leapfrog Integration</h2>
+            <p>The simulator advances motion with a leapfrog integrator: it first updates velocity by half a timestep, uses that velocity to update position, recalculates the acceleration, and then completes the velocity update. Gravitational systems can accumulate large numerical errors over many steps, so leapfrog is used because it generally preserves long-term energy behavior better than a basic Euler update.</p>
+            <h2 id="cuda-features">Features</h2>
+            <ul>
+                <li>Direct O(N<sup>2</sup>) gravitational force evaluation using the real SI gravitational constant.</li>
+                <li>Leapfrog integration with gravitational softening for improved long-term numerical behavior.</li>
+                <li>Shared-memory <code>float4</code> force tiles and configurable CUDA threads per block.</li>
+                <li>CUDA/OpenGL vertex-buffer interoperability for direct GPU visualization.</li>
+                <li>GPU-computed energy, momentum, and center-of-mass diagnostics.</li>
+                <li>Interactive playback with pause, single-step, rewind, camera rotation, and zoom controls.</li>
+            </ul>
+            <h2 id="cuda-current">Current Simulation</h2>
+            <p>The default configuration simulates 16,384 bodies for 2,000 steps with a 100-second timestep and 256 CUDA threads per block. The full run represents approximately 55.56 simulated hours.</p>
+            <h2 id="cuda-display">From Physics to Display</h2>
+            <p>After CUDA calculates a new state, a rendering kernel writes the body positions directly into an OpenGL vertex buffer registered with CUDA. OpenGL then draws those positions as points. This avoids copying every newly calculated frame from the GPU to the CPU and back to the GPU, keeping the simulation and visualization on the device.</p>
+            <p>The program also tracks total energy, momentum, and center of mass. These diagnostics provide practical checks that the numerical implementation remains physically well behaved while the simulation runs. A CPU-side history stores earlier states so the viewer can pause, step forward, or rewind without rerunning the calculation.</p>
+            <h2 id="cuda-decisions">Engineering Decisions</h2>
+            <p>The project deliberately starts with a direct all-pairs solver instead of jumping immediately to a tree algorithm or a more elaborate approximation. That choice keeps the reference calculation easy to reason about and creates a trustworthy baseline for future experiments. Performance changes can be compared against a known physical model rather than against several changing assumptions at once.</p>
+            <p>The data layout also reflects the calculation. Force evaluation needs position and mass, but not velocity, so the shared-memory tile stores a compact <code>float4</code> for each source body. At 256 threads per block, that is 4,096 bytes of shared memory for a tile. Small decisions like this make the memory behavior visible and give the project a concrete connection between physics, hardware, and code.</p>
+            <h2 id="cuda-lessons">What This Project Explores</h2>
+            <p>This is both a simulation and a laboratory for GPU programming. Changing the number of threads per block makes it possible to compare launch configurations, memory reuse, and timing with CUDA events. The physical diagnostics make performance work more meaningful: a faster kernel is only useful if it still produces a stable and interpretable simulation.</p>
+            <p>The interactive history controls are intentional as well. They turn a batch calculation into something that can be inspected. Being able to pause on a state, move one step at a time, and rewind makes numerical behavior easier to understand than watching an uninterrupted animation.</p>
+            <h2 id="cuda-requirements">Build Requirements</h2>
+            <p>Windows 10 or newer, an NVIDIA GPU with CUDA support, CUDA Toolkit 13.3, CMake 3.18 or newer, Visual Studio 2022 Build Tools, vcpkg, GLFW, GLAD, and OpenGL are required.</p>
+            <h2 id="cuda-controls">Controls</h2>
+            <ul>
+                <li><strong style="color:#fff">Space:</strong> play or pause</li>
+                <li><strong style="color:#fff">Right Arrow:</strong> advance one step</li>
+                <li><strong style="color:#fff">Left Arrow:</strong> rewind one step</li>
+                <li><strong style="color:#fff">Left Mouse + Drag:</strong> rotate the camera</li>
+                <li><strong style="color:#fff">Mouse Wheel:</strong> zoom</li>
+                <li><strong style="color:#fff">ESC:</strong> exit</li>
+            </ul>
+            <h2 id="cuda-next">Future Directions</h2>
+            <p>Future experiments could compare the tiled direct solver with shared-memory and constant-memory variants, add more initial-condition presets, and investigate larger body counts. A natural longer-term direction would be an approximate method such as a Barnes-Hut tree, with the direct solver retained as a validation reference. The current architecture is meant to make those comparisons possible without hiding the underlying physics.</p>
         </div>
     </div></div></main>
     <footer><div class="container">&copy; M. Potts 2026 <br>All Rights Reserved <br></div></footer>

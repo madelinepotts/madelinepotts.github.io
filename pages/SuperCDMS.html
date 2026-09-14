@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/main.css">
     <link rel="icon" href="../assets/images/favicon.png" type="image/png">
     <meta charset="utf-8">
-    <title>SuperCDMS CUTE Detector Calibration</title>
+    <title>SuperCDMS Low-Energy Germanium Detector Calibration and Peak Fitting</title>
 </head>
 <body>
     <header><div class="container">
@@ -15,13 +15,34 @@
         <nav><ul><li class=""><a href="../index.html">Homepage</a></li><li class=""><a href="../pages/education.html">Education</a></li><li class=""><a href="../pages/research.html">Research</a></li><li class="active"><a href="../pages/projects.html">Projects</a></li><li><a href="../pages/gallery.html">Photos</a></li><li><a href="https://github.com/mathewpotts" target="_blank">GitHub</a></li><li><a href="https://www.linkedin.com/in/mathew-potts/" target="_blank">Linkin</a></li></ul></nav>
     </div></header>
     <main><div class="container"><div class="row" id="row-tile-overlay-last">
-        <div class="overlay-header"><h1>SuperCDMS CUTE Germanium Detector Calibration</h1></div>
+        <div class="overlay-header"><h1>SuperCDMS Low-Energy Germanium Detector Calibration and Peak Fitting</h1></div>
         <div class="info-box" id="info-pro">
-            <h2>Project Overview</h2>
+            <div class="portrait" id="toc">
+                <p class="toc_title">Table of Contents:</p>
+                <ol>
+                    <li><a href="#supercdms-overview">Project Overview</a></li>
+                    <li><a href="#supercdms-calibration">Low-Energy Calibration</a></li>
+                    <li><a href="#supercdms-analysis">Analysis and Fitting</a></li>
+                    <li><a href="#supercdms-software">Reusable Calibration Software</a></li>
+                    <li><a href="#supercdms-details">Publication and Details</a></li>
+                </ol>
+            </div>
+            <h2 id="supercdms-overview">Project Overview</h2>
             <p><strong style="color:#fff">Fall, 2024 - Present</strong></p>
-            <p>Published research on the calibration of the SuperCDMS CUTE germanium detector using various sources, with contributions focused on data analysis and validation of low-energy neutron activation using <sup>252</sup>Cf.</p>
-            <h2>Project Details</h2>
-            <p>Calibration methods, analysis results, and publication links will be added here.</p>
+            <p>Research supporting the calibration and performance characterization of SuperCDMS high-voltage germanium detectors tested in the Cryogenic Underground TEst facility (CUTE) at SNOLAB.</p>
+            <p>My primary contribution was the low-energy calibration work: developing and fitting the calibration features needed to interpret detector response from the keV down into the sub-keV range.</p>
+            <h2 id="supercdms-calibration">Low-Energy Calibration</h2>
+            <p>SuperCDMS detectors must be calibrated carefully before they can be used to search for low-mass dark matter. At these energies, small changes in detector response matter, so calibration requires identifiable physical features and a model that connects measured signal to deposited energy.</p>
+            <p>The analysis used electron-capture peaks produced by the decay of <sup>71</sup>Ge as low-energy reference features. These peaks provided calibration points in the energy region most relevant to low-threshold searches and allowed the detector response to be studied under high-voltage bias.</p>
+            <h2 id="supercdms-analysis">Analysis and Fitting</h2>
+            <p>I worked on the low-energy analysis and peak fitting needed to extract calibration information from the measured spectra. This involved identifying the relevant features, fitting their locations and shapes, and checking that the resulting calibration was physically consistent across the detector data.</p>
+            <p>The work also connected low-energy behavior to broader detector performance. The same high-voltage germanium detectors were evaluated under low-background conditions and demonstrated useful response over a wide energy range, from the low-energy calibration region to higher-energy interactions.</p>
+            <h2 id="supercdms-software">Reusable Calibration Software</h2>
+            <p>I developed the reusable Python and CERN ROOT analysis software used for the calibration workflow. The tools support reproducible event selection, spectral fitting, energy calibration, detector characterization, visualization, and validation rather than relying on one-off interactive analysis.</p>
+            <p>The calibration procedure was selected as the official CUTE calibration method and was used to lead the calibration of three germanium detectors across six readout channels. The workflow was designed so other researchers could clone it and independently reproduce the analysis.</p>
+            <h2 id="supercdms-details">Publication and Details</h2>
+            <p><a href="https://arxiv.org/pdf/2606.26391" target="_blank">Calibration and Performance of Germanium High Voltage Detectors for SuperCDMS SNOLAB</a></p>
+            <p>This work contributed to the SuperCDMS program's preparation for low-mass dark matter searches using cryogenic germanium and silicon detectors. The paper reports the detector concept, calibration methods, resolution measurements, and performance of the high-voltage detector technology.</p>
         </div>
     </div></div></main>
     <footer><div class="container">&copy; M. Potts 2026 <br>All Rights Reserved <br></div></footer>

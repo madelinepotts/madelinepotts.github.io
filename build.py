@@ -75,6 +75,14 @@ Throughout my research career, I have developed scientific software primarily in
 
     ''',
     '''
+My software work ranges from low-level compiled libraries to collaboration-wide production systems. I lead and mentor contributors across SuperCDMS software projects, with responsibility for architecture, code review, testing, releases, documentation, and reliability. I designed and led development of cdmsproctools, a multi-thousand-line Python package that reduced a several-hour manual workflow to an essentially unattended process and automatically generates and organizes 864 diagnostic plots per full run. I also co-designed Global Mappings, a shared C++ system with Boost.Python bindings that replaced duplicated detector-configuration logic across codebases.
+
+    ''',
+    '''
+I have built systems that operate at several scales: a C++/SQLite detector-geometry pipeline, reusable configuration-driven Geant4 simulation frameworks, orchestration software that configured and monitored 80,000 HPC jobs producing 500,000 simulations, and remote telescope-control software for unattended data acquisition and recovery. My technical work includes Python, C++, C, CUDA C++, Bash, CMake, Make, Linux, SLURM, Docker, Apptainer, REST APIs, HTTP, JSON, SQLite, CSV, CERN ROOT, Geant4, CORSIKA, PyTorch, and OpenAI tools. I use these technologies to connect physical models and detector data to reliable libraries, distributed workflows, validation products, and maintainable developer interfaces.
+
+    ''',
+    '''
 More recently, I have been expanding my GPU-computing experience by developing a CUDA-based N-body simulator from scratch. This project includes GPU kernel development, memory tiling, investigation of thread and warp configurations, performance benchmarking using CUDA events, visualization, and comparisons of different approaches to GPU memory and computation.
 
     ''',
@@ -189,31 +197,31 @@ PROJECTS = [
         "title": "CUDA N-body Simulation of Gravitational Systems",
         "url": "CUDA_Nbody.html",
         "dates": "Fall, 2026 - Present",
-        "description": "A fun personal project to learn CUDA programming, simulating, and displaying gravitational systems.",
+        "description": "A GPU-accelerated N-body gravity simulation in CUDA, C++, and OpenGL exploring parallel force calculations, numerical integration, and interactive visualization.",
     },
     {
         "title": "OpenAI Resume Tailoring",
         "url": "OpenAI_Resume_Tailoring.html",
         "dates": "Fall, 2026 - Present",
-        "description": "A fun personal project to learn OpenAI programming, simulating, and displaying resume tailoring capabilities.",
+        "description": "A command-line tool that uses the OpenAI Responses API to create job-specific resumes, cover letters, and alignment notes from a resume and public job posting.",
     },
     {
-        "title": "SuperCDMS CUTE Germainium Detector Calibration",
+        "title": "SuperCDMS Low-Energy Germanium Detector Calibration and Peak Fitting",
         "url": "SuperCDMS.html",
         "dates": "Fall, 2024 - Present",
-        "description": "Pulished research on the calibration of the SuperCDMS CUTE germanium detector using various sources. My contributions were mainly in data analysis and validation of the low energy neutron activation using 252Cf.",
+        "description": "Official CUTE low-energy calibration workflow for three high-voltage germanium detectors across six readout channels, built with reproducible Python and CERN ROOT event selection, spectral fitting, and validation tools.",
     },
     {
-        "title": "cdmsproctools: SuperCDMS's Offline Data Validation (ODV)",
+        "title": "cdmsproctools: SuperCDMS Pipeline Validation and Quick-Look Monitoring",
         "url": "cdmsproctools.html",
         "dates": "Spring, 2025 - Fall, 2026",
-        "description": "A fun personal project to learn OpenAI programming, simulating, and displaying resume tailoring capabilities.",
+        "description": "Collaboration-adopted Python validation software that reduced a several-hour manual workflow to an unattended process generating and organizing 864 diagnostic plots per full run.",
     },
     {
-        "title": "SuperCDMS Global Mappings",
+        "title": "SuperCDMS Global Data Mappings",
         "url": "globalmappings.html",
         "dates": "Spring, 2025 - Fall, 2026",
-        "description": "A fun personal project to learn OpenAI programming, simulating, and displaying resume tailoring capabilities.",
+        "description": "A collaboration-wide C++ and Boost.Python package centralizing hundreds of detector and configuration parameters through shared database and CSV-backed mappings.",
     },
     {
         "title": "Comic Ray Species Identification with Machine Learning",
@@ -482,10 +490,23 @@ def render_project(project):
         "{{TITLE}}": escape(project["title"]),
         "{{DATES}}": escape(project["dates"]),
         "{{DESCRIPTION}}": escape(project["description"]),
+        "{{ANCHOR}}": escape(f'project-{Path(project["url"]).stem}', quote=True),
     }
     for placeholder, value in values.items():
         template = template.replace(placeholder, value)
     return template
+
+
+def render_toc(items):
+    links = "".join(
+        f'                            <li><a href="#{escape(anchor, quote=True)}">{escape(label)}</a></li>\n'
+        for anchor, label in items
+    )
+    return f'''<div class="portrait" id="toc">
+                        <p class="toc_title">Table of Contents:</p>
+                        <ol>
+{links}                        </ol>
+                    </div>'''
 
 
 def render_gallery(photos):
@@ -647,6 +668,7 @@ def build_projects_page():
             <div class="row" id="row-tile-overlay-last">
                 <div class="overlay-header"><h1>Projects</h1></div>
                 <div class="info-box" id="info-pro">
+                    {render_toc([(f'project-{Path(project["url"]).stem}', project["title"]) for project in PROJECTS])}
                     {content}
                 </div>
             </div>
@@ -661,8 +683,10 @@ def build_gallery_page():
         <div class="container">
             <div class="row" id="row-tile-overlay-last">
                 <div class="overlay-header"><h1>Photo Gallery</h1></div>
-                <div class="info-box photo-gallery">
-                    {render_gallery(PHOTOS)}
+                <div class="info-box" id="info-pro">
+                    <div class="photo-gallery">
+                        {render_gallery(PHOTOS)}
+                    </div>
                 </div>
             </div>
         </div>

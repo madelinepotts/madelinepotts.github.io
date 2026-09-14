@@ -17,11 +17,59 @@
     <main><div class="container"><div class="row" id="row-tile-overlay-last">
         <div class="overlay-header"><h1>OpenAI Resume Tailoring</h1></div>
         <div class="info-box" id="info-pro">
-            <h2>Project Overview</h2>
+            <div class="portrait" id="toc">
+                <p class="toc_title">Table of Contents:</p>
+                <ol>
+                    <li><a href="#ai-overview">Project Overview</a></li>
+                    <li><a href="#ai-process">How the Process Works</a></li>
+                    <li><a href="#ai-workflow">Workflow</a></li>
+                    <li><a href="#ai-documents">Generated Documents</a></li>
+                    <li><a href="#ai-implementation">Implementation</a></li>
+                    <li><a href="#ai-design">Design Principles</a></li>
+                    <li><a href="#ai-review">Why Human Review Matters</a></li>
+                    <li><a href="#ai-usage">Usage</a></li>
+                    <li><a href="#ai-requirements">Requirements and Limitations</a></li>
+                    <li><a href="#ai-next">Future Directions</a></li>
+                </ol>
+            </div>
+            <h2 id="ai-overview">Project Overview</h2>
             <p><strong style="color:#fff">Fall, 2026 - Present</strong></p>
-            <p>A personal project to learn OpenAI programming and develop automated resume-tailoring capabilities.</p>
-            <h2>Project Details</h2>
-            <p>Details, workflow examples, and project results will be added here.</p>
+            <p>AI Resume Tailor creates a job-specific resume, cover letter, and alignment notes from a resume file and a public job-posting URL. It uses the OpenAI Responses API to turn the source materials into application-ready drafts while keeping human review in the workflow.</p>
+            <p><a href="https://github.com/mathewpotts/AIresumeTailor" target="_blank">View the project on GitHub</a></p>
+            <h2 id="ai-process">How the Process Works</h2>
+            <p>The program begins by reading the resume file and converting its contents into text that can be analyzed consistently. Supporting several common formats makes the tool useful with existing application materials instead of requiring the user to rewrite a resume for the program.</p>
+            <p>It then requests the public job page and reads the page's Open Graph title and description. These fields provide a predictable, lightweight way to identify the role and capture its summary without attempting to execute arbitrary page JavaScript or scrape an entire website.</p>
+            <p>The resume text and job-posting information are sent to the OpenAI Responses API with instructions to create three separate documents. The results are saved using the job ID, which keeps applications organized and makes it possible to compare the generated materials for different roles.</p>
+            <h2 id="ai-workflow">Workflow</h2>
+            <ol>
+                <li>Extract text from a <code>.txt</code>, <code>.md</code>, <code>.pdf</code>, or <code>.docx</code> resume.</li>
+                <li>Fetch a public job posting and read its Open Graph title and description.</li>
+                <li>Use the OpenAI Responses API to generate tailored application documents.</li>
+                <li>Write the results to a job-specific output directory.</li>
+            </ol>
+            <h2 id="ai-documents">Generated Documents</h2>
+            <ul>
+                <li><code>tailored_resume.md</code>: an ATS-friendly resume tailored to the posting.</li>
+                <li><code>cover_letter.md</code>: a tailored cover letter.</li>
+                <li><code>alignment_notes.md</code>: addressed requirements, genuine gaps, and the source job URL.</li>
+                <li>PDF versions of each document can be generated through Microsoft Word on Windows.</li>
+            </ul>
+            <h2 id="ai-implementation">Implementation</h2>
+            <p>The application is built as an end-to-end Python workflow. It accepts a job-posting URL, retrieves and parses the page with Requests and Beautiful Soup, compares the requirements with resume content through the OpenAI API, generates Markdown documents, and converts those documents into finished PDFs through Microsoft Word automation on Windows.</p>
+            <p>The project combines API integration, document extraction, structured model output, filesystem organization, command-line interfaces, and reproducible document generation in one practical software tool.</p>
+            <h2 id="ai-design">Design Principles</h2>
+            <p>The tool treats the resume as the source of truth. The model may reorganize and emphasize relevant experience, but the instructions explicitly prohibit inventing employers, dates, degrees, metrics, certifications, or duties. The structured JSON response format gives the program three named outputs instead of relying on fragile text splitting, which makes the files easier to save and inspect.</p>
+            <p>Several small safeguards support that goal. Resume and job-posting text are cleaned and capped before being sent to the model, URLs are validated as public HTTP or HTTPS pages, and the job-posting content is marked as untrusted reference material. The application also keeps credentials outside generated documents by accepting an environment variable or a local ignored key file.</p>
+            <h2 id="ai-review">Why Human Review Matters</h2>
+            <p>The tool is designed to organize and tailor information already present in the source resume, not to invent qualifications. Alignment notes make both matched requirements and genuine gaps visible, while the final review step helps catch inaccurate wording, unsupported claims, or context that the source documents did not provide.</p>
+            <h2 id="ai-usage">Usage</h2>
+            <p>The command-line tool accepts a resume path and public job URL. It also supports custom output directories, OpenAI models, and applicant names:</p>
+            <pre><code>python applier.py path\to\resume.pdf https://example.com/jobs/JR2026123</code></pre>
+            <h2 id="ai-requirements">Requirements and Limitations</h2>
+            <p>Python 3.10 or newer, an OpenAI API key, and a public HTML job-posting URL are required. The job URL must contain an ID in the form <code>JR&lt;number&gt;</code>. JavaScript-only pages or sites that block automated requests may not work, and job text is currently limited to Open Graph metadata.</p>
+            <p>Generated documents must be reviewed for accuracy before they are used in an application. API keys should be supplied through an environment variable or a local ignored key file and never committed to the repository.</p>
+            <h2 id="ai-next">Future Directions</h2>
+            <p>Future improvements could add more robust extraction for job pages whose useful content is not present in Open Graph metadata, support additional document formats, and provide a dry-run mode that shows the extracted inputs before an API call. Another useful direction would be a comparison view that highlights which resume evidence supports each requested qualification.</p>
         </div>
     </div></div></main>
     <footer><div class="container">&copy; M. Potts 2026 <br>All Rights Reserved <br></div></footer>

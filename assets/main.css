@@ -597,7 +597,7 @@ main .container
 
 #row-tile-overlay > .info-box > #toc,
 #row-tile-overlay-last > .info-box > #toc {
-	margin-bottom: 2em;
+	margin: 1.5em 0 2em;
 }
 
 /*********************************************************************************/
@@ -626,7 +626,12 @@ footer .container
 {
 	border-style: dashed;
 	border-color: #fff;
-	padding: 0 3em;
+	padding: 0.75em 3em;
+}
+
+#toc ol
+{
+	margin-top: 0.5em;
 }
 
 #toc .inner-ol

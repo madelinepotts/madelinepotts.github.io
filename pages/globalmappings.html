@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/main.css">
     <link rel="icon" href="../assets/images/favicon.png" type="image/png">
     <meta charset="utf-8">
-    <title>SuperCDMS Global Mappings</title>
+    <title>SuperCDMS Global Data Mappings</title>
 </head>
 <body>
     <header><div class="container">
@@ -15,13 +15,40 @@
         <nav><ul><li class=""><a href="../index.html">Homepage</a></li><li class=""><a href="../pages/education.html">Education</a></li><li class=""><a href="../pages/research.html">Research</a></li><li class="active"><a href="../pages/projects.html">Projects</a></li><li><a href="../pages/gallery.html">Photos</a></li><li><a href="https://github.com/mathewpotts" target="_blank">GitHub</a></li><li><a href="https://www.linkedin.com/in/mathewpotts/" target="_blank">Linkin</a></li></ul></nav>
     </div></header>
     <main><div class="container"><div class="row" id="row-tile-overlay-last">
-        <div class="overlay-header"><h1>SuperCDMS Global Mappings</h1></div>
+        <div class="overlay-header"><h1>SuperCDMS Global Data Mappings</h1></div>
         <div class="info-box" id="info-pro">
-            <h2>Project Overview</h2>
+            <div class="portrait" id="toc">
+                <p class="toc_title">Table of Contents:</p>
+                <ol>
+                    <li><a href="#mappings-overview">Project Overview</a></li>
+                    <li><a href="#mappings-problem">The Problem It Solves</a></li>
+                    <li><a href="#mappings-package">Shared Package Design</a></li>
+                    <li><a href="#mappings-interface">C++ and Python Interface</a></li>
+                    <li><a href="#mappings-scale">Scale and Distribution</a></li>
+                    <li><a href="#mappings-impact">Collaboration-Wide Impact</a></li>
+                    <li><a href="#mappings-details">Project Details</a></li>
+                </ol>
+            </div>
+            <h2 id="mappings-overview">Project Overview</h2>
             <p><strong style="color:#fff">Spring, 2025 - Fall, 2026</strong></p>
-            <p>A personal project focused on developing global mappings for SuperCDMS detector and analysis workflows.</p>
-            <h2>Project Details</h2>
-            <p>Mapping methods, visualizations, and project results will be added here.</p>
+            <p>A collaboration-wide package that centralizes the variable mappings needed to interpret SuperCDMS data across many years of detector operation, processing versions, and analysis software.</p>
+            <p>The package provides a common source of truth for the names, identifiers, and relationships used to interpret processed data. It is designed to support the development of new SuperCDMS code without requiring each project to reconstruct the same historical mappings independently.</p>
+            <h2 id="mappings-problem">The Problem It Solves</h2>
+            <p>SuperCDMS data have been produced over many years using different detector configurations, processing versions, and software environments. The meaning of a variable can depend on that historical context, so analysis and processing libraries need a reliable way to translate between stored data and the physical or detector quantities they represent.</p>
+            <p>Before this package, individual libraries could need to reproduce and update those mappings independently. That created duplicated effort and made it easier for projects to drift apart or interpret the same data differently.</p>
+            <h2 id="mappings-package">Shared Package Design</h2>
+            <p>Global Mappings combines a database with a CSV representation of the mapping information. The database provides structured access to the complete collection of definitions, while the CSV file makes the contents easy to inspect, review, version, and use in development workflows.</p>
+            <p>Keeping the mapping information separate from individual analysis applications means that updates can be made once and consumed by many downstream projects. New code can query the shared package instead of embedding another local copy of historical detector knowledge.</p>
+            <h2 id="mappings-interface">C++ and Python Interface</h2>
+            <p>The core library is implemented in C++ and exposed to Python through Boost.Python. This combination allows the package to provide a compiled, shared implementation for performance-sensitive or existing C++ code while remaining accessible to Python analysis and development projects.</p>
+            <p>The interface gives developers a consistent way to retrieve the values needed to interpret data, regardless of whether the surrounding project is written primarily in C++ or Python. It also places the mapping logic behind a reusable API instead of requiring every project to parse files or maintain its own conversion rules.</p>
+            <h2 id="mappings-scale">Scale and Distribution</h2>
+            <p>The system centralizes hundreds of detector and configuration parameters that had previously been hard-coded independently across software projects. It is distributed through collaboration containerized offline-software releases, allowing new code to use the same mappings in controlled and reproducible environments.</p>
+            <h2 id="mappings-impact">Collaboration-Wide Impact</h2>
+            <p>Because the package is used across the collaboration, it serves as infrastructure rather than a single analysis result. Processing tools, reconstruction-related projects, validation code, and new analysis applications can all rely on the same definitions.</p>
+            <p>This shared approach improves consistency, reduces duplicated maintenance, and makes it easier to develop new projects against data from different detector eras. When the historical mapping is updated, the change can be reviewed and propagated through one maintained package instead of being rediscovered in multiple independent libraries.</p>
+            <h2 id="mappings-details">Project Details</h2>
+            <p>I developed the Global Mappings package to make SuperCDMS data interpretation more maintainable across the collaboration. The project combines database design, structured data modeling, C++ library development, Boost.Python bindings, CSV-based interchange, and scientific software integration.</p>
         </div>
     </div></div></main>
     <footer><div class="container">&copy; M. Potts 2026 <br>All Rights Reserved <br></div></footer>
