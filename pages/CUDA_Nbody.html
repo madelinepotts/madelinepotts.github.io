@@ -19,7 +19,7 @@
                 <li class=""><a href="../pages/research.html">Research</a></li>
                 <li class="active"><a href="../pages/projects.html">Projects</a></li>
                 <li><a href="../pages/gallery.html">Photos</a></li>
-                <li><a href="https://github.com/mathewpotts" target="_blank">GitHub</a></li>
+                <li><a href="https://github.com/madelinepotts" target="_blank">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/mathew-potts/" target="_blank">Linkin</a></li>
             </ul></nav>
         </div>
@@ -46,7 +46,7 @@
             <h2 id="cuda-overview">Project Overview</h2>
             <p><strong style="color:#fff">Fall, 2026 - Present</strong></p>
             <p>A GPU-accelerated N-body gravity simulation implemented in CUDA, C++, and OpenGL. The project explores parallel force calculations, numerical integration, interactive visualization, and CUDA performance optimization.</p>
-            <p><a href="https://github.com/mathewpotts/cuda-nbody" target="_blank">View the project on GitHub</a></p>
+            <p><a href="https://github.com/madelinepotts/cuda-nbody" target="_blank">View the project on GitHub</a></p>
             <h2 id="cuda-process">How the Simulation Works</h2>
             <p>Each simulated body stores a position, velocity, and mass. At every timestep, the program calculates the gravitational acceleration on each body by adding the influence of every other body. This direct approach is intentionally simple and transparent: it has O(N<sup>2</sup>) cost, but it makes the physics and the effect of each optimization easy to inspect.</p>
             <p>The force calculation is distributed across the GPU by assigning one CUDA thread to each target body. The threads process source bodies in shared-memory tiles, allowing all threads in a block to reuse the same source data instead of repeatedly fetching it from slower global memory. This reduces memory traffic while preserving the same physical calculation.</p>

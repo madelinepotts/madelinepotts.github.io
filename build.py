@@ -639,7 +639,8 @@ def build_research_page():
                     <br>
                     <h2>Resume, Curriculum Vitae, etc.</h2>
                     <ul>
-                        <li><a href="../assets/docs/CV.pdf" target="_blank">Resume/CV</a></li>
+                        <li><a href="../assets/docs/Maddie_Potts_Master_Software_Engineer_Resume.pdf" target="_blank">Resume</a></li>
+                        <li><a href="../assets/docs/Maddie_Potts_Master_Software_Engineer_Resume.pdf" target="_blank">Curriculum Vitae</a></li>
                         <li><a href="../assets/docs/Research_Statement.pdf" target="_blank">Research Statement</a></li>
                         <li><a href="../assets/docs/PUBLICATIONS.pdf" target="_blank">Publication List</a></li>
                     </ul>
