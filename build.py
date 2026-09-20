@@ -26,34 +26,9 @@ PAGES = {
 
 HOME_PHOTOS = [
     {
-        "src": "assets/images/SLAC/20160730_000754.jpg",
-        "alt": "sFLASH people watching data in the End Station A control room",
-        "caption": "Watching data arrive during the first sFLASH experiment in 2018.",
-    },
-    {
-        "src": "assets/images/potts_defense.jpg",
-        "alt": "Madeline Potts at her Ph.D. defense",
-        "caption": "Ph.D. defense on April 15, 2022.",
-    },
-    {
-        "src": "assets/images/MD_Mirrors.jpg",
-        "alt": "Madeline standing in front of Middle Drum mirrors",
-        "caption": "Middle Drum fluorescence detector mirrors.",
-    },
-    {
-        "src": "assets/images/apsApril2022.jpg",
-        "alt": "End Station A control room during the APS April 2022 meeting",
-        "caption": "APS April 2022 meeting.",
-    },
-    {
-        "src": "assets/images/SLAC/slac_research_logo.jpg",
-        "alt": "Researchers working in the SLAC End Station A",
-        "caption": "Working in End Station A at SLAC.",
-    },
-    {
-        "src": "assets/images/TA-All-meeting-2021.png",
-        "alt": "Telescope Array collaboration meeting held over Zoom",
-        "caption": "Telescope Array meeting, December 2021.",
+        "src": "assets/images/PNNL/PNNLphoto.PNG",
+        "alt": "PNNL research image",
+        "caption": "Research at Pacific Northwest National Laboratory.",
     },
 ]
 
@@ -99,7 +74,7 @@ RESEARCH_EXPERIENCE = [
     {
         "title": "Pacific Northwest National Lab",
         "dates": "Summer 2024 - Fall 2026",
-        "logo": "../assets/images/pnnl-logo.png",
+        "logo": "../assets/images/logos/pnnl-logo.png",
         "alt": "Pacific Northwest National Lab Logo",
         "details": "Pacific Northwest National Lab<br>Richland, Washington<br>Manager: Bryan Fulsom",
         "bullets": [
@@ -112,7 +87,7 @@ RESEARCH_EXPERIENCE = [
     {
         "title": "High Energy Neutrino Research",
         "dates": "Summer 2022 - Fall 2023",
-        "logo": "../assets/images/trinity-logo.png",
+        "logo": "../assets/images/logos/trinity-logo.png",
         "alt": "Trinity Neutrino Experiment Logo",
         "details": "Trinity Demonstrator Telescope<br>Georgia Institute of Technology, School of Physics<br>PI: Otte Nepomuk",
         "bullets": [
@@ -129,7 +104,7 @@ RESEARCH_EXPERIENCE = [
     {
         "title": "Ultra High Energy Cosmic Ray Research",
         "dates": "Fall 2015 - Fall 2024",
-        "logo": "../assets/images/TALogo.png",
+        "logo": "../assets/images/logos/TALogo.png",
         "alt": "Telescope Array Logo",
         "details": "Telescope Array Cosmic Ray Observatory<br>University of Utah, Department of Physics and Astronomy<br>Research Advisor: <a href=\"https://faculty.utah.edu/u0035487-CHARLES_JUI/hm/index.hml\" target=\"_blank\">Charles Jui</a><br>Thesis: <a href=\"UHECR_energy_spec.html\">Ultra High Energy Cosmic Ray Energy Spectrum using Hybrid Analysis with TAx4</a><br>Thesis Defense Slides: <a href=\"https://docs.google.com/presentation/d/1XjKTnhM_FJhsQyar7xkNWjNmCF2YZYyiSXctHDwY0oM/edit?usp=sharing\">pptx</a>, <a href=\"../assets/docs/Ph.D. Defense.pdf\">pdf</a>",
         "bullets": [
@@ -143,7 +118,7 @@ RESEARCH_EXPERIENCE = [
     {
         "title": "Accelerator Research",
         "dates": "Fall 2015 - Fall 2022",
-        "logo": "../assets/images/slac_logo.png",
+        "logo": "../assets/images/logos/slac_logo.png",
         "alt": "SLAC Logo",
         "details": "sFLASH Collaboration<br>Stanford Linear Accelerator Center, National Accelerator Laboratory<br>Proceedings/Publications: <a href=\"../assets/docs/sFLASH_instruments_PoS(INSCC2017)407.pdf\" target=\"_blank\">Instruments of sFLASH</a>",
         "bullets": [
@@ -156,7 +131,7 @@ RESEARCH_EXPERIENCE = [
     {
         "title": "Astronomy Research",
         "dates": "Fall 2014 - Spring 2015",
-        "logo": "../assets/images/kepler_logo.png",
+        "logo": "../assets/images/logos/kepler_logo.png",
         "alt": "Kepler Logo",
         "details": "Salt Lake Community College, Salt Lake City, Utah<br>Research Advisor: <a href=\"https://www.slcc.edu/geomatics/contact.aspx\" target=\"_blank\">Jonathan Barnes</a><br>Senior Project: <a href=\"https://docs.google.com/presentation/d/14i3i0Zl2fZQMNm-Fr-Jk-oxOaoD44S1b/edit?usp=sharing&ouid=115602461398853445865&rtpof=true&sd=true\" target=\"_blank\">A Closer Look at the KOI-22 Light Curve</a>",
         "bullets": [
@@ -267,12 +242,12 @@ PHOTOS = [
         "caption": "Ph.D. defense, April 15, 2022.",
     },
     {
-        "src": "../assets/images/MD_Mirrors.jpg",
+        "src": "../assets/images/TA/MD_Mirrors.jpg",
         "alt": "Madeline Potts standing in front of Middle Drum mirrors",
         "caption": "Middle Drum fluorescence detector mirrors.",
     },
     {
-        "src": "../assets/images/apsApril2022.jpg",
+        "src": "../assets/images/SLAC/apsApril2022.jpg",
         "alt": "End Station A control room during the APS April 2022 meeting",
         "caption": "APS April 2022 meeting.",
     },
@@ -282,62 +257,62 @@ PHOTOS = [
         "caption": "Working in End Station A at SLAC.",
     },
     {
-        "src": "../assets/images/TA-All-meeting-2021.png",
+        "src": "../assets/images/TA/TA-All-meeting-2021.png",
         "alt": "Telescope Array collaboration meeting held over Zoom",
         "caption": "Telescope Array meeting, December 2021.",
     },
     {
-        "src": "../assets/images/uofu_logo.jpg",
+        "src": "../assets/images/logos/uofu_logo.jpg",
         "alt": "University of Utah logo",
         "caption": "University of Utah.",
     },
     {
-        "src": "../assets/images/pnnl-logo.png",
+        "src": "../assets/images/logos/pnnl-logo.png",
         "alt": "Pacific Northwest National Laboratory logo",
         "caption": "Pacific Northwest National Laboratory.",
     },
     {
-        "src": "../assets/images/trinity-logo.png",
+        "src": "../assets/images/logos/trinity-logo.png",
         "alt": "Trinity neutrino experiment logo",
         "caption": "Trinity neutrino experiment.",
     },
     {
-        "src": "../assets/images/TALogo.png",
+        "src": "../assets/images/logos/TALogo.png",
         "alt": "Telescope Array logo",
         "caption": "Telescope Array.",
     },
     {
-        "src": "../assets/images/slac_logo.png",
+        "src": "../assets/images/logos/slac_logo.png",
         "alt": "SLAC National Accelerator Laboratory logo",
         "caption": "SLAC National Accelerator Laboratory.",
     },
     {
-        "src": "../assets/images/kepler_logo.png",
+        "src": "../assets/images/logos/kepler_logo.png",
         "alt": "Kepler mission logo",
         "caption": "Kepler mission research.",
     },
     {
-        "src": "../assets/images/20200820_092136.jpg",
+        "src": "../assets/images/TA/20200820_092136.jpg",
         "alt": "Telescope Array surface detector in the field",
         "caption": "Surface detector after field maintenance.",
     },
     {
-        "src": "../assets/images/20200816_203056.jpg",
+        "src": "../assets/images/TA/20200816_203056.jpg",
         "alt": "Telescope Array surface detector main board",
         "caption": "Surface detector electronics.",
     },
     {
-        "src": "../assets/images/20200816_135218.jpg",
+        "src": "../assets/images/TA/20200816_135218.jpg",
         "alt": "Telescope Array surface detector in the field",
         "caption": "Surface detector field work.",
     },
     {
-        "src": "../assets/images/20210513_182611.jpg",
+        "src": "../assets/images/TA/20210513_182611.jpg",
         "alt": "Telescope Array research site",
         "caption": "Telescope Array research site.",
     },
     {
-        "src": "../assets/images/MD_TAx4.png",
+        "src": "../assets/images/TA/MD_TAx4.png",
         "alt": "TAx4 detector site",
         "caption": "TAx4 detector site.",
     },
@@ -347,7 +322,7 @@ PHOTOS = [
         "caption": "Trinity demonstrator in the lab.",
     },
     {
-        "src": "../assets/images/slcc_logo.jpg",
+        "src": "../assets/images/logos/slcc_logo.jpg",
         "alt": "Salt Lake Community College logo",
         "caption": "Salt Lake Community College.",
     },
@@ -357,12 +332,12 @@ PHOTOS = [
         "caption": "PMT calibration setup at the University of Utah.",
     },
     {
-        "src": "../assets/images/sflash_diagram.png",
+        "src": "../assets/images/SLAC/sflash_diagram.png",
         "alt": "Diagram of the sFLASH experimental setup",
         "caption": "sFLASH experimental setup.",
     },
     {
-        "src": "../assets/images/sflash_pmts.png",
+        "src": "../assets/images/SLAC/sflash_pmts.png",
         "alt": "Six photomultiplier tubes used in the sFLASH experiment",
         "caption": "The photomultiplier tubes used in sFLASH.",
     },
@@ -462,17 +437,17 @@ PHOTOS = [
         "caption": "Photomultiplier tubes behind lead shielding.",
     },
     {
-        "src": "../assets/images/TA_all_arrays.png",
+        "src": "../assets/images/TA/TA_all_arrays.png",
         "alt": "Map of the Telescope Array, TALE, and TAx4 arrays",
         "caption": "Map of the Telescope Array, TALE, and TAx4.",
     },
     {
-        "src": "../assets/images/tax4_mirror.jpg",
+        "src": "../assets/images/TA/tax4_mirror.jpg",
         "alt": "TAx4 fluorescence detector mirror",
         "caption": "TAx4 fluorescence detector mirror.",
     },
     {
-        "src": "../assets/images/tax4_pmt_cluster.jpg",
+        "src": "../assets/images/TA/tax4_pmt_cluster.jpg",
         "alt": "TAx4 fluorescence detector photomultiplier tube cluster",
         "caption": "TAx4 fluorescence detector camera.",
     },
@@ -587,6 +562,7 @@ def render_header(title, active, root):
         "{{EDUCATION_ACTIVE}}": "active" if active == "Education" else "",
         "{{RESEARCH_ACTIVE}}": "active" if active == "Research" else "",
         "{{PROJECTS_ACTIVE}}": "active" if active == "Projects" else "",
+        "{{PHOTOS_ACTIVE}}": "active" if active == "Photos" else "",
     }
     for placeholder, value in values.items():
         template = template.replace(placeholder, value)
@@ -692,7 +668,7 @@ def build_gallery_page():
             </div>
         </div>
     </main>'''
-    output.write_text(render_header("Photo Gallery", "", "..") + main + "\n" + read(FOOTER), encoding="utf-8")
+    output.write_text(render_header("Photo Gallery", "Photos", "..") + main + "\n" + read(FOOTER), encoding="utf-8")
 
 
 build_homepage()
