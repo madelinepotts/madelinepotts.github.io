@@ -142,11 +142,11 @@ RESEARCH_EXPERIENCE = [
 ]
 
 PUBLICATIONS = [
-    "M.F. Albakry et al. (SuperCDMS Collaboration). Calibration and Performance of Germanium High Voltage Detectors for SuperCDMS SNOLAB. 2026.",
-    "A. Armatol et al. (TESSERACT Collaboration). Low Energy Phonon Bursts Created By Fast Neutron Damage. 2026.",
-    "M. Bagheri et al. (Trinity Collaboration). The Camera and Readout for the Trinity Demonstrator and the EUSO-SPB2 Cherenkov Telescope. Nuclear Instruments and Methods in Physics Research, 2024.",
-    "M. Potts. Ultra-High Energy Cosmic Ray Energy Spectrum Using Hybrid Analysis with TAx4. Dissertation, 2022.",
-    "R.U. Abbasi et al. (TA Collaboration). Indications of a Cosmic Ray Source in the Perseus-Pices Supercluster. 2021.",
+    "M.F. Albakry et al. (SuperCDMS Collaboration). <a href=\"../assets/docs/2606.26391v2.pdf\" target=\"_blank\">Calibration and Performance of Germanium High Voltage Detectors for SuperCDMS SNOLAB</a>. 2026.",
+    "A. Armatol et al. (TESSERACT Collaboration). <a href=\"../assets/docs/2603.17964v1.pdf\" target=\"_blank\">Low Energy Phonon Bursts Created By Fast Neutron Damage</a>. 2026.",
+    "M. Bagheri et al. (Trinity Collaboration). <a href=\"../assets/docs/2406.08274v1.pdf\" target=\"_blank\">The Camera and Readout for the Trinity Demonstrator and the EUSO-SPB2 Cherenkov Telescope</a>. Nuclear Instruments and Methods in Physics Research, 2024.",
+    "M. Potts. <a href=\"../assets/docs/ULTRA_HIGH_ENERGY_COSMIC_RAY_ENERGY_SPECTRUM_USING_HYBRID_ANALYSIS_WITH_TAX4.pdf\" target=\"_blank\">Ultra-High Energy Cosmic Ray Energy Spectrum Using Hybrid Analysis with TAx4. Dissertation</a>. 2022.",
+    "R.U. Abbasi et al. (TA Collaboration). <a href=\"../assets/docs/2110.14827v1.pdf\" target=\"_blank\">Indications of a Cosmic Ray Source in the Perseus-Pices Supercluster</a>. 2021.",
     "M. Potts and C. Jui (TA Collaboration). <a href=\"../assets/docs/ICRC2021_343.pdf\" target=\"_blank\">Monocular Energy Spectrum using the TAx4 Fluorescence Detector.</a> Proceedings of Science (ICRC2021), 343.",
     "R.U. Abbasi et al. (TA Collaboration). <a href=\"../assets/docs/TAX4SD_paper.pdf\" target=\"_blank\">Surface detectors of the TAx4 experiment.</a> Nuclear Instruments and Methods in Physics Research, 2021.",
     "S. Atwood et al. (sFLASH Collaboration). <a href=\"../assets/docs/sFLASH_instruments_PoS(INSCC2017)407.pdf\" target=\"_blank\">The Instruments of sFLASH experiment.</a> Proceedings of Science (ICRC2017), 407.",
