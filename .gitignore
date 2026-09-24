@@ -1,0 +1,5 @@
+# Ignore workflows
+.github/*
+
+# Ignore pycache
+__pycache__/*
